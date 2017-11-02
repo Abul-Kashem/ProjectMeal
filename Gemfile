@@ -9,7 +9,9 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'mysql2'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bcrypt-ruby', '3.1.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -27,6 +29,38 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'shoulda'
+gem 'date_validator'
+gem 'foreigner'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'searchkick'
+gem 'money'
+gem 'money-rails'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'geocoder'
+gem 'geo_ip'
+
+# gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary', '~> 0.12.3.1'
+gem 'wicked_pdf'
+gem 'premailer-rails'
+gem 'nokogiri'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'aws-sdk-v1'
+gem 'carrierwave'
+gem 'fog'
+gem 'figaro'
+gem 'mini_magick'
+gem 'responders'
+gem 'devise' # User management
+gem 'elastic-beanstalk'
+gem 'font-awesome-rails' # Font-awesome icon
+gem 'mail_form' #Forms, mail
+gem 'simple_form' #Forms, mail
+
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -35,10 +69,29 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+group :development,:test do
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'simplecov', :require => false
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'childprocess'
+  gem 'rails-erd'
+  gem 'pry-rails'
+  gem 'guard-rails'
+  gem 'guard-livereload'
+  gem 'guard-bundler'
   gem 'byebug', platform: :mri
 end
+
+group :test do
+  gem 'selenium-webdriver', '~> 2.42.0'
+  gem 'capybara', '~> 2.3.0'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'launchy'
+end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -48,6 +101,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+
+group :production do
+  # gem 'pg'
+  # gem 'rails_12factor', '~> 0.0.2'
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
