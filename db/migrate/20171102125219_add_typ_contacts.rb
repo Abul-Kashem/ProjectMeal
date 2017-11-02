@@ -4,6 +4,6 @@ class AddTypContacts < ActiveRecord::Migration[5.0]
     TypContact.create(name: "Shipping")
   end
   def down
-    
+
   end
 end
